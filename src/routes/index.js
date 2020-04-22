@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
+import PrivateRoute from "../../src/components/PrivateRoute";
+
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Gallery from "../pages/Gallery";
@@ -23,10 +25,10 @@ const Routes = () => (
     >
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/gallery" component={Gallery} />
         <Route path="/login" component={Login} />
+        <PrivateRoute path="/about" component={About} />
+        <PrivateRoute path="/contact" component={Contact} />
+        <PrivateRoute path="/gallery" component={Gallery} />
       </Switch>
     </main>
   </BrowserRouter>

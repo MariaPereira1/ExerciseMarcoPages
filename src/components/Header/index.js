@@ -1,8 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 import { NavLink, withRouter } from "react-router-dom";
 import "./styles.less";
 
-const Header = ({ history }) => {
+const Header = ({ history, isLogged, username }) => {
   return (
     <div className="header">
       <nav className="nav">
@@ -20,12 +21,27 @@ const Header = ({ history }) => {
         </NavLink>
       </nav>
       <div className="user">
-        <button className="login-button" onClick={() => history.push("/login")}>
-          Login
-        </button>
+        {isLogged ? (
+          <div>
+            <p className="username">{username}</p>
+            <button className="logout-button">Logout</button>
+          </div>
+        ) : (
+          <button
+            className="login-button"
+            onClick={() => history.push("/login")}
+          >
+            Login
+          </button>
+        )}
       </div>
     </div>
   );
 };
 
-export default withRouter(Header);
+const mapStateToProps = (state) => ({
+  isLogged: state.user.isLogged,
+  username: state.user.details.username
+});
+
+export default withRouter(connect(mapStateToProps)(Header));
