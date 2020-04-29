@@ -28,7 +28,7 @@ const Gallery = ({
           const gifs = data.map((item) => item.img);
           setData(gifs);
         })
-        .catch((e) => {
+        .catch(() => {
           setError("Something went wrong...");
         });
     };

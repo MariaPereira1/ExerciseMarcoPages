@@ -1,6 +1,15 @@
-export const loginUserAction = (username) => ({
-  type: "LOGIN_USER",
+export const loginUserAction = () => ({
+  type: "LOGIN_USER"
+});
+
+export const detailsUserAction = (email, name) => ({
+  type: "LOGIN_USER_DETAILS",
   payload: {
-    username
+    email,
+    name
   }
+});
+
+export const logoutUserAction = () => ({
+  type: "LOGOUT_USER"
 });

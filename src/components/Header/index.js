@@ -1,14 +1,66 @@
-import React, { useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import request from "../../api";
+import {
+  logoutUserAction,
+  loginUserAction,
+  detailsUserAction
+} from "../../store/user/actions";
 import "./styles.less";
 
-const Header = ({ location, history, isLogged, username }) => {
+const Header = ({
+  location,
+  history,
+  detailsUser,
+  loginUser,
+  logoutUser,
+  isLogged,
+  name
+}) => {
   const [, setLocation] = useState(location.pathname);
 
   useEffect(() => {
     setLocation(location.pathname), [location.pathname];
   }, []);
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+
+    if (token) {
+      request
+        .get("/users/me", {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .then((response) => {
+          const { email, name } = response.data;
+
+          detailsUser(email, name);
+          loginUser();
+        });
+    }
+  }, []);
+
+  const handleLogoutButton = () => {
+    const token = sessionStorage.getItem("token");
+    request
+      .post(
+        "/users/me/logout",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      .finally(() => {
+        logoutUser();
+        sessionStorage.removeItem("token");
+        history.push("/");
+      });
+  };
 
   return (
     <header className="header">
@@ -29,18 +81,26 @@ const Header = ({ location, history, isLogged, username }) => {
       <div className="user">
         {isLogged ? (
           <div>
-            <p className="username">{username}</p>
-            <button className="logout-button" onClick={() => history.push("/")}>
+            <p className="username">{name}</p>
+            <button className="logout-button" onClick={handleLogoutButton}>
               Logout
             </button>
           </div>
         ) : (
-          <button
-            className="login-button"
-            onClick={() => history.push("/login")}
-          >
-            Login
-          </button>
+          <Fragment>
+            <button
+              className="login-button"
+              onClick={() => history.push("/login")}
+            >
+              Login
+            </button>
+            <button
+              className="register-button"
+              onClick={() => history.push("/register")}
+            >
+              Register
+            </button>
+          </Fragment>
         )}
       </div>
     </header>
@@ -49,7 +109,13 @@ const Header = ({ location, history, isLogged, username }) => {
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
-  username: state.user.details.username
+  name: state.user.details.name
 });
 
-export default withRouter(connect(mapStateToProps)(Header));
+const mapDispatchToProps = (dispatch) => ({
+  logoutUser: () => dispatch(logoutUserAction()),
+  loginUser: () => dispatch(loginUserAction()),
+  detailsUser: (email, name) => dispatch(detailsUserAction(email, name))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

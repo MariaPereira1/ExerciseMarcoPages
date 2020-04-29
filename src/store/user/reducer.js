@@ -1,7 +1,8 @@
 const initialState = {
-  isLogged: true,
+  isLogged: false,
   details: {
-    username: ""
+    email: "",
+    name: ""
   }
 };
 
@@ -10,11 +11,18 @@ const userReducer = (state = initialState, action) => {
     case "LOGIN_USER":
       return {
         ...state,
-        isLogged: true,
+        isLogged: true
+      };
+    case "LOGIN_USER_DETAILS":
+      return {
+        ...state,
         details: {
-          username: action.payload.username
+          email: action.payload.email,
+          name: action.payload.name
         }
       };
+    case "LOGOUT_USER":
+      return initialState;
     default:
       return state;
   }
