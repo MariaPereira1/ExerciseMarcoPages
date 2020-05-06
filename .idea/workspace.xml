@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fb5f41-c169-4d40-a82b-ee3ef3cb0fd4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/styles.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/styles.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/About/styles.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/About/styles.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Gallery/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Gallery/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Gallery/styles.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Gallery/styles.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/styles.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/styles.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +26,29 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Gallery action tests.Start loading gallery" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/store/gallery/__tests__/actions.test.js" />
+      <test-names>
+        <test-name value="Gallery action tests" />
+        <test-name value="Start loading gallery" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.Gallery action tests.Start loading gallery" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -47,10 +61,29 @@
       <option name="presentableId" value="Default" />
       <updated>1588165569742</updated>
       <workItem from="1588165571293" duration="71000" />
+      <workItem from="1588774673136" duration="1937000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1213" height="327" key="GridCell.Tab.0.bottom" timestamp="1588775989483">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1213" height="327" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1588775989483" />
+    <state width="1213" height="327" key="GridCell.Tab.0.center" timestamp="1588775989482">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1213" height="327" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1588775989482" />
+    <state width="1213" height="327" key="GridCell.Tab.0.left" timestamp="1588775989481">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1213" height="327" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1588775989481" />
+    <state width="1213" height="327" key="GridCell.Tab.0.right" timestamp="1588775989482">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1213" height="327" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1588775989482" />
   </component>
 </project>
